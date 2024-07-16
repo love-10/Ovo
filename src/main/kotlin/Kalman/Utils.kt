@@ -9,5 +9,13 @@ object Utils {
         return arrayOf(intArrayOf(center_x, center_y, w, h, 0, 0)).T()
     }
 
+    fun state2box(state:Array<IntArray>):IntArray {
+        val center_x = state[0][0]
+        val center_y = state[1][0]
+        val w = state[2][0]
+        val h = state[3][0]
+        return intArrayOf(center_x - w / 2, center_y - h / 2, center_x + w / 2, center_y + h / 2)
+    }
+
 
 }

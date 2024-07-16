@@ -1,5 +1,5 @@
 package org.example.Kalman
 
 fun main() {
-    log(Utils.box2stage(intArrayOf(1, 2, 3, 4)).T())
+    log(Utils.state2box(Utils.box2stage(intArrayOf(1132, 2232, 323, 489))))
 }
