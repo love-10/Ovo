@@ -1,7 +1,7 @@
 package org.example.Kalman
 
 
-fun box2stage(box: IntArray): Array<IntArray> {
+fun box2state(box: IntArray): Array<IntArray> {
     val center_x = (box[0] + box[2]) / 2
     val center_y = (box[1] + box[3]) / 2
     val w = box[2] - box[0]
@@ -32,3 +32,8 @@ fun mea2box(mea: Array<IntArray>): IntArray {
     val h = mea[3][0]
     return intArrayOf(center_x - w / 2, center_y - h / 2, center_x + w / 2, center_y + h / 2)
 }
+
+fun mea2state(mea: Array<IntArray>): Array<IntArray> {
+    return mea.plus(intArrayOf(0)).plus(intArrayOf(0))
+}
+
